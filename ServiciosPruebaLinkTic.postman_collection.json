@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "26bce265-a625-4767-aae5-60038cc1ca29",
+		"name": "ServiciosPruebaLinkTic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23112154"
+	},
+	"item": [
+		{
+			"name": "ProductoGet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoCrear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"ABC12345\",\r\n    \"name\": \"Laptop2\",\r\n    \"price\": 1200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoCrearDuplicado(Error 409)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"ABC1234\",\r\n    \"name\": \"Laptop\",\r\n    \"price\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoCrearSinDatos(Error 422)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"\",\r\n    \"name\": \"\",\r\n    \"price\": -100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoActualizacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laptop\",\r\n    \"price\": 1200,\r\n    \"status\": \"ACTIVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products/55555555-5555-5555-5555-555555555555"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoEliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products/55555555-5555-5555-5555-555555555555"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoSearch",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/products?search=lap&status=ACTIVE",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "lap"
+						},
+						{
+							"key": "status",
+							"value": "ACTIVE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoSearchID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/products/11111111-1111-1111-1111-111111111111"
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoSearchShort(Ascendente)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/products?sort=price,asc",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "price,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InventoryBuscarByID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/inventory/11111111-1111-1111-1111-111111111111"
+			},
+			"response": []
+		},
+		{
+			"name": "InventoryBuscarGeneral",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/inventory?page=0&size=20",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InventoryPurchase",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Idempotency-Key",
+						"value": "test-7208",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": \"11111111-1111-1111-1111-111111111111\",\r\n  \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/inventory/purchase"
+			},
+			"response": []
+		},
+		{
+			"name": "InventorySincronizarProductos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Idempotency-Key",
+						"value": "test-720",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/inventory/sync"
+			},
+			"response": []
+		},
+		{
+			"name": "InventoryActualizarStock",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Idempotency-Key",
+						"value": "test-720",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"available\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/inventory/44444444-4444-4444-4444-444444444444"
+			},
+			"response": []
+		}
+	]
+}

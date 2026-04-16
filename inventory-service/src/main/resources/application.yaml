@@ -2,19 +2,8 @@ spring:
   application:
     name: inventory-service
 
-  datasource:
-    url: jdbc:postgresql://localhost:5432/inventory_db
-    username: oxcar720_db
-    password: area_restringida2427DB
-    driver-class-name: org.postgresql.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+server:
+  port: 8082
 
 management:
   endpoints:
@@ -38,6 +27,3 @@ resilience4j:
       productService:
         maxAttempts: 3
         waitDuration: 500ms
-
-server:
-  port: 8082
