@@ -1,0 +1,68 @@
+# =========================
+# GENERAL
+# =========================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# JAVA / SPRING BOOT
+# =========================
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Logs
+logs/
+*.log
+
+# Compiled files
+*.class
+
+# =========================
+# SPRING CONFIG (SENSITIVE)
+# =========================
+application.properties
+application.yml
+application-*.yml
+application-*.properties
+
+# (opcional: si quieres subir configs base, comenta lo anterior)
+
+# =========================
+# NODE / VUE
+# =========================
+frontend-vue/node_modules/
+frontend-vue/dist/
+frontend-vue/.env
+frontend-vue/.env.*
+
+# =========================
+# DOCKER
+# =========================
+docker-compose.override.yml
+
+# =========================
+# DATABASE
+# =========================
+*.sql.tmp
+
+# =========================
+# OS FILES
+# =========================
+ehthumbs.db
+Icon?

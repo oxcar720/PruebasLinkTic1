@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: products-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/products_db
+    username: oxcar720_db
+    password: area_restringida2427DB
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8081
