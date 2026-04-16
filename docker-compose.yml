@@ -38,5 +38,13 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
 
+  frontend:
+    build: ./frontend-vue
+    ports:
+      - "3000:3000"
+    depends_on:
+      - products-service
+      - inventory-service
+
 volumes:
   postgres_data:
